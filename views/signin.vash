@@ -1,0 +1,60 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    //
+    // flash vars
+    //
+    @if(model.flash && model.flash.data) {
+      var data = model.flash.data;
+    }
+    @if(model.flash && model.flash.dataErrors) {
+      var dataErrors = model.flash.dataErrors;
+    }
+    @if(model.flash && model.flash.alert) {
+      var alert = model.flash.alert;
+    }
+
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('SIGNIN.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- SigninPage -->
+    <div class="SigninPage">
+      <div class="AuthModule u-layer-2 u-margin--auto">
+        <h5 class="AuthModule-title">@model.translate('SIGNIN.FORM_TITLE')</h5>
+        <div class="AuthModule-separator"></div>
+        @if(alert) {
+          <div class="Alert Alert--@(alert.type)">
+            <span>@alert.message</span>
+          </div>
+        }
+        <form class="Form" action="/signin" method="POST">
+          <div class="FormField">
+            <label class="FormField-label">@model.translate('SIGNIN.EMAIL_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="email" type="email" value="@(data && data.email || '' )" required>
+            @if(dataErrors && dataErrors.email) {
+              <div class="FormField-error">@dataErrors.email.message</div>
+            }
+          </div>
+          <div class="FormField">
+            <label class="FormField-label">@model.translate('SIGNIN.PASSWORD_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="password" type="password" required>
+            @if(dataErrors && dataErrors.password) {
+              <div class="FormField-error">@dataErrors.password.message</div>
+            }
+          </div>
+          <p class="u-text--right">
+            <a class="AuthModule-link" href="/forgot-password">@model.translate('SIGNIN.FORGOT_PASSWORD_LINK')</a>
+            <a class="AuthModule-link" href="/signup">@model.translate('SIGNIN.SUBSCRIBE_LINK')</a>
+          </p>
+          <div class="u-text--center">
+            <button class="Button Button--block" type="submit">@model.translate('SIGNIN.SIGNIN_BUTTON')</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- SigninPage -->
+    
+  })
+})

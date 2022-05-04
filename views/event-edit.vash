@@ -1,0 +1,74 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    //
+    // flash vars
+    //
+    @{
+      var event = model.event;
+    }
+    @if(model.flash && model.flash.data) {
+      var data = model.flash.data;
+    }
+    @if(model.flash && model.flash.dataErrors) {
+      var dataErrors = model.flash.dataErrors;
+    }
+    @if(model.flash && model.flash.alert) {
+      var alert = model.flash.alert;
+    }
+
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('EVENT_EDIT.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- EventEditPage -->
+    <div class="EventEditPage">
+      @if(alert) {
+        <div class="Alert Alert--@(alert.type)">
+          <span>@alert.message</span>
+        </div>
+      }
+      <form class="Form" action="/event-edit" method="POST">
+        <input name="idEvent" type="hidden" value="@event._id">
+        <div class="FormField FormField--required">
+          <label class="FormField-label">@model.translate('EVENT_EDIT.TITLE_FIELD')</label>
+          <input class="FormCtrl FormCtrl--block" name="title" value="@event.title" required>
+          @if(dataErrors && dataErrors.title) {
+            <div class="FormField-error">@dataErrors.title.message</div>
+          }
+        </div>
+        <div class="FormField FormField--required">
+          <label class="FormField-label">@model.translate('EVENT_EDIT.START_DATETIME_FIELD')</label>
+          <input class="FormCtrl FormCtrl--block" name="startDatetime" type="datetime-local" value="@event.startDatetime.format('YYYY-MM-DDTHH:mm')" required>
+          @if(dataErrors && dataErrors.startDatetime) {
+            <div class="FormField-error">@dataErrors.startDatetime.message</div>
+          }
+        </div>
+        <div class="FormField FormField--required">
+          <label class="FormField-label">@model.translate('EVENT_EDIT.END_DATETIME_FIELD')</label>
+          <input class="FormCtrl FormCtrl--block" name="endDatetime" type="datetime-local" value="@event.endDatetime.format('YYYY-MM-DDTHH:mm')" required>
+          @if(dataErrors && dataErrors.endDatetime) {
+            <div class="FormField-error">@dataErrors.endDatetime.message</div>
+          }
+        </div>
+        <div class="FormField">
+          <label class="FormField-label">@model.translate('EVENT_EDIT.LOCATION_FIELD')</label>
+          <input class="FormCtrl FormCtrl--block" name="location" value="@event.location" pattern="^https:\/\/goo.gl\/maps\/[A-Za-z0-9]{17}$" placeholder="https://goo.gl/maps/xxxxxxxxxxxxx">
+          @if(dataErrors && dataErrors.location) {
+            <div class="FormField-error">@dataErrors.location.message</div>
+          }
+        </div>
+        <div class="FormField">
+          <label class="FormField-label">@model.translate('EVENT_EDIT.DESCRIPTION_FIELD')</label>
+          <textarea class="FormCtrl FormCtrl--block" name="description" rows="5" cols="33" style="resize: none;">@event.description</textarea>
+        </div>
+        <div class="u-text--right">
+          <button class="Button" type="submit">@model.translate('EVENT_EDIT.EDIT_BUTTON')</button>
+        </div>
+      </form>
+    </div>
+    <!-- EventEditPage -->
+    
+  })
+})

@@ -1,0 +1,1413 @@
+body {
+  padding-top: 10px;
+  font: 1em/1.5 sans-serif;
+}
+
+body.theme-default {
+  color: #000;
+  background-color: #b8b8b8;
+  background-image: url("/images/wall.jpg");
+}
+
+.theme-default a {
+  text-decoration: none;
+  color: #0000ee;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Utilities
+/*---------------------------------------------------------------------------------------------*/
+.theme-default .u-text--important {
+  color: red !important;
+}
+.theme-default .u-layer-1 {
+  border: 4px solid #ff9494 !important;
+  border-bottom: 4px solid #703838 !important;
+  border-left: 4px solid #703838 !important;
+}
+.theme-default .u-layer-2 {
+  border: 2px solid #ff9494 !important;
+  border-bottom: 2px solid #703838 !important;
+  border-left: 2px solid #703838 !important;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Alert
+/*---------------------------------------------------------------------------------------------*/
+.Alert {
+  display: block;
+  padding: 0.75rem;
+  padding-right: 35px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.Alert--closable .Close {
+  position: relative;
+  right: -20px;
+  color: inherit;
+}
+
+.theme-default .Alert {
+  background-color: white;
+  color: black;
+}
+.theme-default .Alert--error {
+  background-color: red;
+  color: white;
+}
+.theme-default .Alert--primary {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Alert--secondary {
+  background-color: grey;
+  color: white;
+}
+.theme-default .Alert--success {
+  background-color: green;
+  color: white;
+}
+.theme-default .Alert--info {
+  background-color: lightblue;
+  color: white;
+}
+.theme-default .Alert--warning {
+  background-color: orange;
+  color: white;
+}
+.theme-default .Alert--danger {
+  background-color: darkred;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Close
+/*---------------------------------------------------------------------------------------------*/
+.Close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  opacity:0.2;
+}
+.Close:hover,
+.Close:focus {
+  text-decoration: none;
+  cursor: pointer;
+  opacity:0.5;
+}
+
+.theme-default .Close {
+  color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Badge
+/*---------------------------------------------------------------------------------------------*/
+.Badge {
+  display: inline-block;
+  padding-left: 0.355em;
+  padding-right: 0.355em;
+  text-align: center;
+  vertical-align: baseline;
+  line-height: 2;
+  font-size: 0.75rem;
+  min-width: 1.5rem;
+  border-radius: 24px;
+}
+
+.theme-default .Badge {
+  background-color: black;
+  color: white;
+}
+.theme-default .Badge--primary {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Badge--secondary {
+  background-color: grey;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Button
+/*---------------------------------------------------------------------------------------------*/
+.Button {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0;
+  padding: 0.6em 1em;
+  border: 0;
+  border-radius: 24px;
+}
+.Button,
+.Button:hover {
+  text-decoration: none;
+}
+.Button:focus {
+  outline: 0;
+}
+.Button-icon {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.Button--natural {
+  vertical-align: baseline;
+  font-size: inherit;
+  line-height: inherit;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+.Button--link {
+  background-color: transparent;
+  border-color: transparent;
+}
+.Button--disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  filter: alpha(opacity=70%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.Button--sm {
+  padding: 0.4em 0.5em;
+}
+.Button--lg {
+  padding: 1.5em 1.5em;
+}
+.Button--xl {
+  padding: 2em 2em;
+}
+.Button--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+.Button--alpha {
+  font-size: 3rem;
+}
+.Button--beta {
+  font-size: 2rem;
+}
+.Button--gamma {
+  font-size: 1rem;
+}
+.Button--important {
+  font-weight: bold;
+}
+
+.theme-default .Button {
+  background-color: lightgrey;
+  color: white;
+  border-color: black;
+}
+.theme-default .Button:hover,
+.theme-default .Button:focus {
+  background-color: black;
+  color: white;
+}
+.theme-default .Button--primary {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Button--primary:hover,
+.theme-default .Button--primary:focus {
+  background-color: darkblue;
+  color: white;
+}
+.theme-default .Button--secondary {
+  background-color: grey;
+  color: white;
+}
+.theme-default .Button--secondary:hover,
+.theme-default .Button--secondary:focus {
+  background-color: black;
+  color: white;
+}
+.theme-default .Button--success {
+  background-color: green;
+  color: white;
+}
+.theme-default .Button--success:hover,
+.theme-default .Button--success:focus {
+  background-color: darkgreen;
+  color: white;
+}
+.theme-default .Button--info {
+  background-color: lightblue;
+  color: white;
+}
+.theme-default .Button--info:hover,
+.theme-default .Button--info:focus {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Button--warning {
+  background-color: orange;
+  color: white;
+}
+.theme-default .Button--warning:hover,
+.theme-default .Button--warning:focus {
+  background-color: darkorange;
+  color: white;
+}
+.theme-default .Button--danger {
+  background-color: red;
+  color: white;
+}
+.theme-default .Button--danger:hover,
+.theme-default .Button--danger:focus {
+  background-color: darkred;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Container
+/*---------------------------------------------------------------------------------------------*/
+.Container-fixed {
+  margin-right: auto;
+  margin-left: auto;
+  width: 920px;
+}
+.Container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 920px;
+}
+.Container-full {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Dialog
+/*---------------------------------------------------------------------------------------------*/
+.Dialog {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1000000;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.Dialog > * {
+  margin-bottom: 0.75em;
+}
+.Dialog-header {
+  display: block;
+  padding: 0.75em;
+}
+.Dialog-header-title {
+  margin: 0;
+  font-weight: 700;
+}
+.Dialog-body {
+  position: relative;
+}
+.Dialog-body > * {
+  margin-bottom: 0.5em;
+  padding: 0 0.75em;
+}
+.Dialog-body > *:first-child {
+  margin-top: 0.5em;
+}
+.Dialog-footer {
+  display: block;
+  padding: 0 0.75em;
+}
+.Dialog-actions {
+  text-align: right;
+}
+.Dialog-scrollable {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+.Dialog-seamless {
+  padding: 0;
+}
+.Dialog--closable .Dialog-header {
+  padding-right: 35px;
+}
+.Dialog--closable .Close {
+  position: relative;
+  right: -20px;
+  color: inherit;
+}
+.Dialog--sm {
+  width: 250px;
+}
+.Dialog--md {
+  width: 500px;
+}
+.Dialog--lg {
+  width: 700px;
+}
+
+.theme-default .Dialog {
+  border-color: black;
+  background-color: grey;
+  color: white;
+}
+.theme-default .Dialog-header {
+  background-color: black;
+  color: white;
+}
+.theme-default .Dialog--error {
+  border-color: black;
+  background-color: red;
+  color: white;
+}
+.theme-default .Dialog--error > .Dialog-header {
+  background-color: darkred;
+  color: white;
+}
+.theme-default .Dialog--success {
+  border-color: black;
+  background-color: green;
+  color: white;
+}
+.theme-default .Dialog--success > .Dialog-header {
+  background-color: darkgreen;
+  color: white;
+}
+.theme-default .Dialog--info {
+  border-color: black;
+  background-color: lightblue;
+  color: white;
+}
+.theme-default .Dialog--info > .Dialog-header {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Dialog--warning {
+  border-color: black;
+  background-color: orange;
+  color: white;
+}
+.theme-default .Dialog--warning > .Dialog-header {
+  background-color: darkorange;
+  color: white;
+}
+.theme-default .Dialog--danger {
+  border-color: black;
+  background-color: red;
+  color: white;
+}
+.theme-default .Dialog--danger > .Dialog-header {
+  background-color: darkred;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Dropdown
+/*---------------------------------------------------------------------------------------------*/
+.Dropdown {
+  position: relative;
+}
+.Dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  padding: 0.3rem 0;
+  z-index: 50;
+  min-width: 159.99998px;
+  text-align: left;
+  border: 1px solid;
+  margin: 0;
+  list-style: none;
+}
+.Dropdown-menu-list {
+  margin: 0;
+  list-style: none;
+}
+.Dropdown-menu-list-item {
+  display: block;
+}
+.Dropdown-menu-list-item > a {
+  display: block;
+  padding: 0.2rem 0.75rem;
+  cursor: pointer;
+}
+.Dropdown-menu-list-item > a:hover {
+  text-decoration: none;
+}
+.Dropdown-menu-list-separator {
+  border-bottom: 1px solid;
+  margin: calc(0.2rem * 2) 0;
+  padding-top: 1px;
+}
+
+.theme-default .Dropdown {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+.theme-default .Dropdown-menu-list-item > a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+.theme-default .Dropdown-menu-list-separator {
+  border-color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Form
+/*---------------------------------------------------------------------------------------------*/
+.Form {
+  display: block;
+}
+.Form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.Form--inline .FormField {
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* FormAddon
+/*---------------------------------------------------------------------------------------------*/
+.FormAddon {
+  display: flex;
+}
+.FormAddon .FormField {
+  flex: 1;
+}
+.FormAddon-item {
+  font: inherit;
+  font-weight: 400;
+}
+.FormAddon .FormField,
+.FormAddon-item {
+  padding: 0.5em 0.75em;
+}
+
+.theme-default .FormAddon-item {
+  background-color: grey;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* FormCtrl
+/*---------------------------------------------------------------------------------------------*/
+.FormCtrl {
+  display: block;
+  min-width: 10px;
+  line-height: 1.5;
+  border: 1px solid;
+}
+.FormCtrl--disabled,
+.FormCtrl:disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  filter: alpha(opacity=70%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.FormCtrl--xs {
+  width: 50px;
+}
+.FormCtrl--sm {
+  width: 130px;
+}
+.FormCtrl--md {
+  width: 200px;
+}
+.FormCtrl--lg {
+  width: 500px;
+}
+.FormCtrl--block {
+  display: block;
+  width: 100%;
+}
+.FormCtrl--alpha {
+  font-size: 20px;
+}
+.FormCtrl--beta {
+  font-size: 12px;
+}
+
+.theme-default .FormCtrl {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+.theme-default .FormCtrl:focus {
+  background-color: #eeeeee;
+}
+.theme-default .FormCtrl--error {
+  background-color: red;
+  color: white;
+}
+.theme-default .FormCtrl--error:focus {
+  background-color: darkred;
+  color: white;
+}
+.theme-default .FormCtrl--success {
+  background-color: green;
+  color: white;
+}
+.theme-default .FormCtrl--success:focus {
+  background-color: darkgreen;
+  color: white;
+}
+.theme-default .FormCtrl--warning {
+  background-color: orange;
+  color: white;
+}
+.theme-default .FormCtrl--warning:focus {
+  background-color: darkorange;
+  color: white;
+}
+.theme-default .FormCtrl--danger {
+  background-color: lightcoral;
+  color: white;
+}
+.theme-default .FormCtrl--danger:focus {
+  background-color: coral;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* FormField
+/*---------------------------------------------------------------------------------------------*/
+.FormField {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.FormField-label {
+  display: block;
+  margin-bottom: 0.2em;
+}
+.FormField-hint {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.FormField-error {
+  display: block;
+  font-weight: inherit;
+}
+.FormField--inline .FormCtrl,
+.FormField--inline .FormField-label {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 0.2em;
+  width: auto;
+}
+.FormField--required .FormField-label::after {
+  content: " *";
+}
+
+.theme-default .FormField-hint {
+  color: grey;
+}
+.theme-default .FormField-error {
+  color: red;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Heading
+/*---------------------------------------------------------------------------------------------*/
+.Heading {
+  border-bottom: 1px solid;
+  margin-bottom: 1.5rem;
+}
+
+.theme-default .Heading {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Label
+/*---------------------------------------------------------------------------------------------*/
+.Label {
+  display: inline-block;
+  min-width: 1.45em;
+  padding-left: 0.355em;
+  padding-right: 0.355em;
+  font-size: 0.75em;
+  line-height: 2em;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 24px;
+}
+
+.theme-default .Label {
+  background-color: black;
+  color: white;
+}
+.theme-default .Label--primary {
+  background-color: blue;
+  color: white;
+}
+.theme-default .Label--secondary {
+  background-color: grey;
+  color: white;
+}
+.theme-default .Label--success {
+  background-color: green;
+  color: white;
+}
+.theme-default .Label--info {
+  background-color: lightblue;
+  color: white;
+}
+.theme-default .Label--warning {
+  background-color: orange;
+  color: white;
+}
+.theme-default .Label--danger {
+  background-color: coral;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Link
+/*---------------------------------------------------------------------------------------------*/
+.Link,
+.Link:hover,
+.Link:active,
+.Link:focus {
+  text-decoration: none;
+}
+.Link:hover .Link-target,
+.Link:active .Link-target,
+.Link:focus .Link-target {
+  text-decoration: underline;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* List
+/*---------------------------------------------------------------------------------------------*/
+.ListUnstyled {
+  list-style: none;
+  margin: 0;
+}
+.ListUnstyled .listUnstyled {
+  margin-left: 1.5rem;
+}
+.ListInline {
+  list-style: outside none none;
+  margin: 0;
+}
+.ListInline > li {
+  display: inline-block;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Media
+/*---------------------------------------------------------------------------------------------*/
+.Media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+.Media-figure {
+  margin-right: 1em;
+}
+.Media-body {
+  flex: 1;
+}
+.Media--right .Media-figure {
+  margin-right: 0;
+  margin-left: 1em;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Paragraph
+/*---------------------------------------------------------------------------------------------*/
+.ParagraphLead {
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+.ParagraphLettrine::first-letter {
+  float: left;
+  margin: 0.13em 0.05em 0 -0.05em;
+  font-size: 3.333em;
+  line-height: 0.75em;
+}
+.ParagraphAlinea::first-letter {
+  margin-left: 2em;
+}
+.ParagraphIllustrated figure,
+.ParagraphIllustrated img {
+  float: left;
+  margin: 0.35em 1em 0 0;
+}
+.ParagraphIllustrated figure {
+  margin-bottom: 1em;
+}
+.ParagraphIllustrated--right figure,
+.ParagraphIllustrated--right img {
+  float: right;
+  margin: 0.35em 0 0 1em;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Rule
+/*---------------------------------------------------------------------------------------------*/
+.Rule {
+  position: relative;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.Rule--dotted {
+  border-bottom-style: dotted;
+}
+.Rule--dashed {
+  border-bottom-style: dashed;
+}
+
+.theme-default .Rule {
+  color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Row
+/*---------------------------------------------------------------------------------------------*/
+.Row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.Row-col {
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+}
+.Row--gutter {
+  margin-right: calc(0.5rem * -1);
+  margin-left: calc(0.5rem * -1);
+}
+.Row--gutter > .Row-col {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: calc(0.5rem * 2);
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Table
+/*---------------------------------------------------------------------------------------------*/
+.Table {
+  display: table;
+}
+.Table--bordered th,
+.Table--bordered td {
+  border: 1px solid;
+}
+.Table--bordered th:empty,
+.Table--bordered td:empty {
+  border: none;
+}
+.Table--data {
+  font: 12px/1.5 sans-serif;
+}
+.Table--fixed {
+  table-layout: fixed;
+}
+.Table--fixed td p {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal !important;
+}
+
+.theme-default .Table {
+  background-color: lightgrey;
+  color: black;
+}
+.theme-default .Table--striped tbody tr:nth-of-type(odd) {
+  background-color: grey;
+  color: white;
+}
+.theme-default .Table-active,
+.theme-default .Table--hover tbody tr:hover > td:not(:empty),
+.theme-default .Table--hover tbody tr:hover > th:not(:empty) {
+  background-color: black;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Toast
+/*---------------------------------------------------------------------------------------------*/
+.Toast {
+  display: block;
+  position: fixed;
+  top: 0;
+  font-size: 0.75rem;
+  min-height: 2em;
+  min-width: 20em;
+  padding: 1em 1.5em;
+  margin: 0.75rem;
+  opacity: 0;
+  cursor: default;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.Toast--open {
+  opacity: 1;
+}
+
+.theme-default .Toast {
+  background-color: black;
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Breadcrumb
+/*---------------------------------------------------------------------------------------------*/
+.Breadcrumb {
+  display: block;
+  font-size: 1.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+  margin-left: 0;
+  padding-bottom: 12px;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  text-align: center;
+}
+.Breadcrumb-item {
+  display: inline;
+}
+.Breadcrumb-item + .Breadcrumb-item::before {
+  content: "\00BB""\00A0";
+}
+.Breadcrumb-item a {
+  color: black;
+}
+
+.theme-default .Breadcrumb {
+  border-color: #ff0000;
+}
+.theme-default .Breadcrumb-item a {
+  color: black;
+}
+
+/*#############################################################################################*/
+/*#############################################################################################*/
+/*#############################################################################################*/
+/*#############################################################################################*/
+
+/*---------------------------------------------------------------------------------------------*/
+/* PageWrapper & PageContent
+/*---------------------------------------------------------------------------------------------*/
+.PageWrapper {
+  padding: 20px;
+  padding-bottom: 0;
+  background-color: white;
+  color: black;
+}
+.PageContent {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* UploadBtnWrapper
+/*---------------------------------------------------------------------------------------------*/
+.UploadBtnWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.UploadBtnWrapper-btn {
+  border-style: solid;
+  border-width: 2px;
+  padding: 8px 20px;
+  font-size: 20px;
+}
+.UploadBtnWrapper-input {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.theme-default .UploadBtnWrapper-btn {
+  color: gray;
+  background-color: white;
+  border-color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* SystemBanner
+/*---------------------------------------------------------------------------------------------*/
+.SystemBanner {
+  display:flex;
+  justify-content:space-between;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* TopBanner
+/*---------------------------------------------------------------------------------------------*/
+.TopBanner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 50px;
+}
+.TopBanner-profileImg {
+  margin-left: 10px;
+  width: 24px;
+}
+.TopBanner-welcomeMessage {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.TopBanner-welcomeMessage-userlink {
+  font-weight: bold;
+}
+.TopBanner-welcomeMessage-userlink:hover {
+  text-decoration: underline;
+}
+.TopBanner-nav {
+  flex: 1;
+  text-align: right;
+  margin-left: 10px;
+}
+.TopBanner-nav-item {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 14px;
+}
+.TopBanner-nav-item a {
+  flex: 1;
+  text-decoration: none;
+}
+
+.theme-default .TopBanner {
+  background: linear-gradient(#af0000, #ff0000, #ff0000, #ff7373);
+  color: white;
+}
+.theme-default .TopBanner-welcomeMessage-userlink {
+  color: white;
+}
+.theme-default .TopBanner-nav-item a {
+  color: white;
+}
+.theme-default .TopBanner-nav-item a:hover {
+  color: #ffce85;
+}
+.theme-default .TopBanner-nav-item.active a {
+  color: #ffce85;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Banner
+/*---------------------------------------------------------------------------------------------*/
+.Banner {
+  margin-bottom: 20px;
+}
+.Banner-bg {
+  background-size: cover;
+  height: 200px;
+}
+.Banner-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+}
+.Banner-nav-item {
+  margin: 0 30px;
+}
+.Banner-nav-item a {
+  flex: 1;
+  text-decoration: none;
+}
+
+.theme-default .Banner-bg {
+  background-image: url("https://via.placeholder.com/1125x266");
+}
+.theme-default .Banner-nav {
+  background: linear-gradient(#af0000, #ff0000, #ff0000, #ff7373);
+}
+.theme-default .Banner-nav-item a {
+  color: white;
+}
+.theme-default .Banner-nav-item a:hover {
+  color: #ffce85;
+}
+.theme-default .Banner-nav-item.active a {
+  color: #ffce85;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Footer
+/*---------------------------------------------------------------------------------------------*/
+.Footer {
+  border-top: 1px solid;
+  padding: 10px 0;
+  margin-top: 3rem;
+}
+.Footer-copyright {
+  text-align: center;
+}
+
+.theme-default .Footer {
+  border-color: grey;
+}
+.theme-default .Footer-copyright { 
+  color: #b8b8b8;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* AuthModule
+/*---------------------------------------------------------------------------------------------*/
+.AuthModule {
+  max-width: 500px;
+  width: 500px;
+  padding: 0.75rem;
+}
+.AuthModule-separator {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-bottom: 1.5rem;
+}
+.AuthModule-separator::before {
+  display: block;
+  content: " ";
+  height: 2px;
+}
+.AuthModule-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.AuthModule .FormField {
+  margin-bottom: 0.75rem;
+}
+.AuthModule .FormField-hint {
+  font-style: italic;
+}
+.AuthModule .FormField-error {
+  font-weight: bold;
+}
+.AuthModule-link {
+  font-size: 12px;
+}
+.AuthModule-link + .AuthModule-link {
+  margin-left: 0.5em;
+}
+.AuthModule .Button {
+  font-weight: bold;
+}
+
+.theme-default .AuthModule {
+  background-color: #c74545;
+  color: white;
+}
+.theme-default .AuthModule-separator {
+  border-top-color: #703838;
+  border-bottom-color: #f26d6d;
+}
+.theme-default .AuthModule-separator::before {
+  background-color: #b65252;
+}
+.theme-default .AuthModule-title {
+  color: white;
+}
+.theme-default .AuthModule .FormField-hint {
+  color: white;
+}
+.theme-default .AuthModule .FormField-error {
+  color:#ffb2b2;
+}
+.theme-default .AuthModule-link {
+  color: white;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* SelectionInline
+/*---------------------------------------------------------------------------------------------*/
+.SelectionInline {
+  display: flex;
+  align-items: center;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+.SelectionInline-title {
+  flex:1;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.SelectionInline-list {
+  list-style: outside none none;
+  margin: 0;
+  display: inline;
+  padding: 0;
+}
+.SelectionInline-list-item {
+  display: inline-block;
+}
+.SelectionInline-list-item:after {
+  content: "\002C""\00A0";
+}
+.SelectionInline-list-item:last-child:after {
+  display: none;
+}
+.SelectionInline-list-item a:hover,
+.SelectionInline-list-item a:focus {
+  text-decoration: none;
+}
+
+.theme-default .SelectionInline {
+  border-bottom-color: #8d8d8d;
+}
+.theme-default .SelectionInline-list-item a {
+  color: black;
+}
+.theme-default .SelectionInline-list-item a:hover,
+.theme-default .SelectionInline-list-item a:focus,
+.theme-default .SelectionInline-list-item.active a {
+  color: #5ebfca;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* MemberCard
+/*---------------------------------------------------------------------------------------------*/
+.MemberCard {
+  position: relative;
+  border: 1px solid;
+}
+.MemberCard-name {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-bottom: 0;
+}
+.MemberCard-avatar {
+  padding: 0 10px 10px 10px;
+  text-align: center;
+}
+.MemberCard-avatar img {
+  width: 100%;
+}
+.MemberCard-info {
+  padding: 0 10px 5px 10px;
+}
+.MemberCard-info-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 1px 0px 5px 0px;
+}
+.MemberCard-info-item-title {
+  min-width: 100px;
+  font-weight: 600;
+}
+
+.theme-default .MemberCard {
+  color: black;
+  border-color: #d4d4d4;
+}
+.theme-default .MemberCard-name {
+  color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* EventCard
+/*---------------------------------------------------------------------------------------------*/
+.EventCard {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+.EventCard--freeze {
+  opacity: 0.5;
+  user-select: none;
+}
+.EventCard--freeze:hover {
+  opacity:1;
+}
+.EventCard-separator {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 1.5rem;
+}
+.EventCard-separator::before {
+  display: block;
+  content: " ";
+  height: 2px;
+}
+.EventCard-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.EventCard-infos {
+  margin-bottom: 0.5rem;
+}
+.EventCard-infos-item {
+  display: flex;
+}
+.EventCard-infos-item-label {
+  flex: 1;
+}
+.EventCard-infos-item-value {
+  font-weight: bold;
+  max-width: 500px;
+  text-align: right;
+}
+.EventCard-infos-item-value a {
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+.EventCard-description {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0.5rem;
+}
+.EventCard-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+}
+
+.theme-default .EventCard {
+  background: #ffe37f;
+  background: linear-gradient(180deg,rgba(255, 227, 127, 1) 0%,rgba(255, 227, 127, 1) 35%,rgba(255, 192, 0, 1) 100%);
+}
+.theme-default .EventCard-separator {
+  border-top-color: #fdba02;
+  border-bottom-color: #e5ff00;
+}
+.theme-default .EventCard-separator::before {
+  background-color: #f3c90d;
+}
+.theme-default .EventCard-description {
+  background-color: #ffffff94;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* EmptyBox
+/*---------------------------------------------------------------------------------------------*/
+.EmptyBox {
+  display: block;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.theme-default .EmptyBox {
+  background-color: #dbdbdb;
+  color: grey;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* DataView
+/*---------------------------------------------------------------------------------------------*/
+.DataView {
+  position: relative;
+}
+.DataView-item {
+  display:flex;
+  margin-bottom: 0.75rem;
+}
+.DataView-item-key {
+  max-width:200px;
+  min-width:200px;
+  font-weight: bold;
+}
+.DataView-item-value {
+  flex:1;
+}
+
+.theme-default .DataView-item-value {
+  color: grey;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* UserProfileImgBox
+/*---------------------------------------------------------------------------------------------*/
+.UserProfileImgBox {
+  padding: 10px;
+  margin-bottom: 0.75rem;
+  white-space: normal;
+  border: 1px solid #d4d4d4;
+  background-color: #f5f5f5;
+  color: black;
+}
+.UserProfileImgBox .Button {
+  white-space: normal;
+  background-color: #424242;
+  color: white;
+}
+.UserProfileImgBox .Button:hover {
+  background-color: black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* UserProfileImgForm
+/*---------------------------------------------------------------------------------------------*/
+.UserProfileImgForm {
+  display:block;
+  width:100%;
+}
+.UserProfileImgForm .UploadBtnWrapper,
+.UserProfileImgForm .UploadBtnWrapper-btn {
+  display:block;
+  width:100%;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* HomePage
+/*---------------------------------------------------------------------------------------------*/
+.HomePage {
+  display: block;
+}
+.HomePage-intro {
+  text-align: center;
+}
+.HomePage-callout {
+  font-weight: bold;
+}
+
+.theme-default .HomePage-callout {
+  color: red;
+}

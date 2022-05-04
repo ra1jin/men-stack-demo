@@ -1,0 +1,135 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    //
+    // flash vars
+    //
+    @{
+      var me = model.me;
+    }
+    @if(model.flash && model.flash.dataErrors) {
+      var dataErrors = model.flash.dataErrors;
+    }
+    @if(model.flash && model.flash.alert) {
+      var alert = model.flash.alert;
+    }
+  
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('MEMBER_SETTINGS.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- UserSettingsPage -->
+    <div class="UserSettingsPage">
+      @if(alert) {
+        <div class="Alert Alert--closable Alert--@(alert.type)">
+          <a href="#" class="Close Alert-Close" title="close" onclick="this.parentElement.style.display='none'">×</a>
+          <span>@alert.message</span>
+        </div>
+      }
+      <!-- ProfileSection ---------------------------------------------------------------------------------------------------------------------- -->
+      <div class="u-fx">
+        <div class="u-fx-flex-1">
+          <div class="UserProfileImgBox">
+            <img class="UserProfileImgBox-img" src="@(me.avatar == '' ? model._defaultAvatar : me.avatar)">
+          </div>
+          <form class="UserProfileImgForm" action="/settings/chavatar" method="POST" enctype="multipart/form-data">
+            <div class="UploadBtnWrapper">
+              <button class="UploadBtnWrapper-btn">Upload a file</button>
+              <input class="UploadBtnWrapper-input" type="file" name="avatar" onchange="form.submit()" />
+            </div>
+          </form>
+        </div>
+        <div class="u-fx-flex-3 u-margin--left">
+          <h3 class="Heading">@model.translate('MEMBER_SETTINGS.PROFILE_SECTION')</h3>
+          <form class="Form u-margin--bottom" action="/settings/profile" method="POST">
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.USERNAME_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="username" value="@me.username" required>
+              @if(dataErrors && dataErrors.username) {
+                <div class="FormField-error">@dataErrors.username.message</div>
+              }
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.EMAIL_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" value="@me.email" readonly>
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.BIO_LABEL')</label>
+              <textarea class="FormCtrl FormCtrl--block" name="bio" rows="5" cols="33" style="resize: none;">@me.bio</textarea>
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.CLASS_LABEL')</label>
+              <select class="FormCtrl FormCtrl--block" name="class">
+                <option value="">
+                  @model.translate('MEMBER_SETTINGS.CLASS_VALUE_NONE')
+                </option>
+                <option value="DEVELOPPER" @(me.class == 'DEVELOPPER' ? 'selected' : '')>
+                  @model.translate('ENUM_CLASS_DEVELOPPER')
+                </option>
+                <option value="DESIGNER" @(me.class == 'DESIGNER' ? 'selected' : '')>
+                  @model.translate('ENUM_CLASS_DESIGNER')
+                </option>
+                <option value="MUSICIAN" @(me.class == 'MUSICIAN' ? 'selected' : '')>
+                  @model.translate('ENUM_CLASS_MUSICIAN')
+                </option>
+                <option value="WRITER" @(me.class == 'WRITER' ? 'selected' : '')>
+                  @model.translate('ENUM_CLASS_WRITER')
+                </option>
+                <option value="TESTER" @(me.class == 'TESTER' ? 'selected' : '')>
+                  @model.translate('ENUM_CLASS_TESTER')
+                </option>
+              </select>
+              @if(dataErrors && dataErrors.class) {
+                <div class="FormField-error">@dataErrors.class.message</div>
+              }
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.SKILLS_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="skills" value="@me.skills">
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.BIRTHYEAR_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="birthYear" type="number" value="@me.birthYear" required>
+              @if(dataErrors && dataErrors.birthYear) {
+                <div class="FormField-error">@dataErrors.birthYear.message</div>
+              }
+            </div>
+            <div class="u-text--right">
+              <button type="submit" class="Button">@model.translate('MEMBER_SETTINGS.CHANGE_PROFILE_BUTTON')</button>
+            </div>
+          </form>
+          <!-- ChangePasswordSection ---------------------------------------------------------------------------------------------------------------------- -->
+          <div class="Heading Heading--3">@model.translate('MEMBER_SETTINGS.CHPASSWD_SECTION')</div>
+          <form class="Form u-margin--bottom" action="/settings/chpasswd" method="POST">
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.PASSWORD_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="password" type="password" required>
+              @if(dataErrors && dataErrors.password) {
+                <div class="FormField-error">@dataErrors.password.message</div>
+              }
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.NEW_PASSWORD_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="newPassword" type="password" required>
+              @if(dataErrors && dataErrors.newPassword) {
+                <div class="FormField-error">@dataErrors.newPassword.message</div>
+              }
+            </div>
+            <div class="FormField">
+              <label class="FormField-label">@model.translate('MEMBER_SETTINGS.NEW_PASSWORD_CONFIRM_LABEL')</label>
+              <input class="FormCtrl FormCtrl--block" name="newPasswordConfirm" type="password" required>
+              @if(dataErrors && dataErrors.newPasswordConfirm) {
+                <div class="FormField-error">@dataErrors.newPasswordConfirm.message</div>
+              }
+            </div>
+            <div class="u-text--right">
+              <button type="submit" class="Button">@model.translate('MEMBER_SETTINGS.CHANGE_PASSWORD_BUTTON')</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- UserSettingsPage -->
+  })
+})

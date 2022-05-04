@@ -1,0 +1,199 @@
+{
+    "ERROR_INVALID_DATA_FORMAT": "Format des données invalide",
+    "ERROR_INVALID_USERNAME_FORMAT": "Format du nom d'utilisateur invalide",
+    "ERROR_INVALID_EMAIL_FORMAT": "Format de l'adresse email invalide",
+    "ERROR_INVALID_PASSWORD_FORMAT": "Format du mot de passe invalide",
+    "ERROR_INVALID_BIRTHYEAR_FORMAT": "Format de l'année de naissance invalide",
+    "ERROR_INVALID_CLASS_FORMAT": "Format de classe invalide",
+    "ERROR_INVALID_EVENT_TITLE": "Titre de l'évènement invalide",
+    "ERROR_INVALID_EVENT_START_DATETIME": "Date de début invalide",
+    "ERROR_INVALID_EVENT_END_DATETIME": "Date de fin invalide",
+    "ERROR_INVALID_EVENT_LOCATION": "Localisation invalide",
+    "ERROR_INVALID_EVENT_DESCRIPTION": "Description invalide",
+    "ERROR_ACCOUNT_NOT_EXIST": "Ce compte n'existe pas",
+    "ERROR_ACCOUNT_ALREADY_EXIST": "Ce compte existe déjà",
+    "ERROR_EMAIL_ALREADY_EXIST": "Cette email existe déjà",
+    "ERROR_USERNAME_ALREADY_EXIST": "Ce nom d'utilisateur existe déjà",
+    "ERROR_PASSWORD_NOT_MATCH": "Les mots de passe ne correspondent pas",
+    "ERROR_BAD_PASSWORD": "Mauvais mot de passe",
+    "ERROR_RESET_PASSWORD_INVALID_TOKEN_FORMAT": "Format de la clé de réinitilisation du mot de passe invalide",
+    "ERROR_RESET_PASSWORD_INVALID_TOKEN": "Clé de réinitialisation du mot de passe invalide",
+    "ERROR_RESET_PASSWORD_EXPIRED_TOKEN": "Clé de réinitialisation du mot de passe expirée",
+    "ERROR_EMAIL_OR_PASSWORD": "Identifiant ou mot de passe erroné",
+    "ERROR_EVENT_NOT_EXIST": "Cet evènement n'existe pas",
+    "ERROR_EVENT_ALREADY_JOINED": "Vous avez déjà rejoint cet evènement",
+    "ERROR_EVENT_NOT_ALREADY_JOINED": "Vous n'avez pas encore rejoint cet evènement",
+    "ERROR_EVENT_OWNER_CANNOT_LEAVE": "Vous ne pouvez pas vous désinscrire de l'evènement que vous avez créer",
+    "ERROR_EVENT_FREEZE": "Evènement gelée, les inscriptions/désinscription sont bloquées",
+    "ERROR_INVALID_OBJECTID_FORMAT": "Invalid objectid format",
+
+    "ENUM_CLASS_DEVELOPPER": "Developpeur",
+    "ENUM_CLASS_DESIGNER": "Designer",
+    "ENUM_CLASS_MUSICIAN": "Musicien",
+    "ENUM_CLASS_WRITER": "Ecrivain",
+    "ENUM_CLASS_TESTER": "Testeur",
+
+    "TOP_BANNER": {
+        "WELCOME": "Bienvenue",
+        "SIGNIN_LINK": "Se connecter",
+        "SIGNUP_LINK": "S'inscrire",
+        "CREATE_EVENT": "Créer un evènement",
+        "SETTINGS": "Paramètres",
+        "LOGOUT": "Déconnexion"
+    },
+    "BANNER": {
+        "HOME_LINK": "Accueil",
+        "MEMBERS_LINK": "Membres",
+        "EVENT_LIST_LINK": "Evènements",
+        "ABOUTUS_LINK": "Contact"
+    },
+    "HOME": {
+        "CALLOUT": "Un bon départ pour commencer un nouveau projet",
+        "INTRO1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "INTRO2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "INTRO3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem",
+        "SUBSCRIBE_BUTTON": "S'inscrire"
+    },
+    "ABOUTUS": {
+        "TITLE": "Contactez-nous",
+        "FOUNDER": "Fondateur",
+        "LOCATION": "Localisation"
+    },
+    "ERROR_VIEW": {
+        "TITLE": "Quelque-chose ne va pas !",
+        "SUBTITLE": "Une erreur inattendue est survenue",
+        "CODE": "Code d'erreur",
+        "MESSAGE": "Message d'erreur"
+    },
+    "EVENT_LIST": {
+        "TITLE": "Evènements",
+        "DISPLAY_SELECTION_TITLE": "Afficher",
+        "DISPLAY_SELECTION_ITEM_ALL": "Tous",
+        "DISPLAY_SELECTION_ITEM_ONCOMING_ONGOING": "A venir(s) / en cours",
+        "DISPLAY_SELECTION_ITEM_ENDED": "Terminé(s)",
+        "START_DATETIME_LABEL": "Commence le",
+        "END_DATETIME_LABEL": "Finit le",
+        "TIME_REMAINING_LABEL": "Temps restant",
+        "TIME_REMAINING_VALUE_DAYS": "%s jour(s)",
+        "TIME_REMAINING_VALUE_HOURS_MINUTES": "%s heure(s), %s minute(s)",
+        "TIME_REMAINING_VALUE_MINUTES_SECONDS": "%s minute(s), %s seconde(s)",
+        "TIME_REMAINING_VALUE_SECONDS": "%s seconde(s)",
+        "TIME_REMAINING_VALUE_ONGOING": "en cours",
+        "TIME_REMAINING_VALUE_ENDED": "Terminé",
+        "LOCATION_LABEL": "Lieu du rasemblement",
+        "LOCATION_MAP_LINK": "Voir sur la carte",
+        "AUTHOR_LABEL": "Membre organisateur",
+        "CONTRIBUTORS_LABEL": "Participants",
+        "SUBSCRIBE_BUTTON": "Rejoindre cet evènement",
+        "UNSUBSCRIBE_BUTTON": "Quitter cet evènement",
+        "EDIT_BUTTON": "Modifier mon evènement",
+        "DELETE_BUTTON": "Supprimer mon evènement",
+        "EMPTY_BOX_TEXT": "Liste d'évènements vide",
+        "EVENT_SUBSCRIBED_ALERT": "Vous avez rejoins cet evènement",
+        "EVENT_UNSUBSCRIBED_ALERT": "Vous avez quitter cet evènement",
+        "EVENT_REMOVED_ALERT": "Vous avez supprimer cet evènement"
+    },
+    "EVENT_NEW": {
+        "TITLE": "Créer un evènement",
+        "TITLE_FIELD": "Titre",
+        "START_DATETIME_FIELD": "Date de début",
+        "END_DATETIME_FIELD": "Date de fin",
+        "LOCATION_FIELD": "Localisation",
+        "DESCRIPTION_FIELD": "Description",
+        "CREATE_BUTTON": "Créer",
+        "SUCCESS_ALERT": "Evènement crée"
+    },
+    "EVENT_EDIT": {
+        "TITLE": "Editer un evènement",
+        "TITLE_FIELD": "Titre",
+        "START_DATETIME_FIELD": "Date de début",
+        "END_DATETIME_FIELD": "Date de fin",
+        "LOCATION_FIELD": "Localisation",
+        "DESCRIPTION_FIELD": "Description",
+        "EDIT_BUTTON": "Editer",
+        "SUCCESS_ALERT": "Evènement édité"
+    },
+    "FORBIDDEN": {
+        "TITLE": "Accès non autorisé",
+        "SUBTITLE": "Essayer une nouvelle url !"
+    },
+    "FORGOT_PASSWORD": {
+        "TITLE": "Mot de passe oublié ?",
+        "FORM_TITLE": "Demande de réinitilisation",
+        "EMAIL_FIELD": "E-Mail",
+        "SEND_REQUEST_BUTTON": "Envoyer le code de sécurité",
+        "SUCCESS_ALERT": "Code de securité envoyé par mail"
+    },
+    "MEMBERS": {
+        "TITLE": "Membres",
+        "EMPTY_BOX_TEXT": "Liste des membres vide",
+        "BIRTHYEAR_LABEL": "Année de naissance",
+        "CLASS_LABEL": "Classe",
+        "REGISTRATION_DATE_LABEL": "Date d'inscription",
+        "STATUS_LABEL": "Status"
+    },
+    "MEMBER_PROFILE": {
+        "TITLE": "Profil de",
+        "BIO_LABEL": "Bio",
+        "CLASS_LABEL": "Classe",
+        "SKILLS_LABEL": "Compétences",
+        "REGISTRATION_DATE_LABEL": "Date d'inscription"
+    },
+    "MEMBER_SETTINGS": {
+        "TITLE": "Paramètres",
+        "PROFILE_SECTION": "Mon profil",
+        "USERNAME_LABEL": "Nom d'utilisateur",
+        "EMAIL_LABEL": "Email",
+        "BIO_LABEL": "Bio",
+        "CLASS_LABEL": "Classe",
+        "CLASS_VALUE_NONE": "Aucune classe définit",
+        "SKILLS_LABEL": "Compétences",
+        "BIRTHYEAR_LABEL": "Année de naissance",
+        "CHANGE_PROFILE_BUTTON": "Modifier mon profil",
+        "PROFIL_CHANGED_ALERT": "Votre profil a été mis à jour",
+        "CHPASSWD_SECTION": "Changer de mot de passe",
+        "PASSWORD_LABEL": "Mot de passe actuel",
+        "NEW_PASSWORD_LABEL": "Nouveau mot de passe",
+        "NEW_PASSWORD_CONFIRM_LABEL": "Confirmation du nouveau mot de passe",
+        "CHANGE_PASSWORD_BUTTON": "Changer mon mot de passe",
+        "PASSWORD_CHANGED_ALERT": "Votre mot de passe a été changé",
+        "AVATAR_CHANGED_ALERT": "Votre avatar a été changé"
+    },
+    "NOT_FOUND": {
+        "TITLE": "Page introuvable",
+        "SUBTITLE": "La page que vous recherchez semble introuvable"
+    },
+    "RESET_PASSWORD": {
+        "TITLE": "Réinitialiser votre mot de passe",
+        "FORM_TITLE": "Choisissez un nouveau mot de passe",
+        "TOKEN_FIELD": "Clé de réinitialisation",
+        "NEW_PASSWORD_FIELD": "Nouveau mot de passe",
+        "NEW_PASSWORD_CONFIRM_FIELD": "Confirmation du nouveau mot de passe",
+        "RESET_BUTTON": "Réinitialiser",
+        "SUCCESS_ALERT": "Mot de passe réinitialiser avec succès"
+    },
+    "SIGNIN": {
+        "TITLE": "Connectez-vous",
+        "FORM_TITLE": "Connectez-vous à l'espace membre",
+        "EMAIL_FIELD": "Email",
+        "PASSWORD_FIELD": "Mot de passe",
+        "FORGOT_PASSWORD_LINK": "Mot de passe oublié ?",
+        "SUBSCRIBE_LINK": "S'inscrire",
+        "SIGNIN_BUTTON": "Se connecter"
+    },
+    "SIGNUP": {
+        "TITLE": "Inscrivez-vous",
+        "FORM_TITLE": "Inscrivez-vous et devenez un membre de l'association",
+        "USERNAME_FIELD": "Nom d'utilisateur",
+        "USERNAME_FIELD_HINT": "Doit contenir uniquement des lettres, des chiffres, '_' et '-'",
+        "EMAIL_FIELD": "Email",
+        "PASSWORD_FIELD": "Mot de passe",
+        "PASSWORD_CONFIRM_FIELD": "Confirmation du mot de passe",
+        "BIRTHYEAR_FIELD": "Année de naissance",
+        "SIGNUP_BUTTON": "S'inscrire",
+        "SUCCESS_ALERT": "Votre inscription est enregistrée, veuillez attendre la confirmation de l'administrateur"
+    },
+    "FOOTER": {
+        "COPYRIGHT": "This site Copyright © 2018-2019 GL19."
+    }
+}

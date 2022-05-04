@@ -1,0 +1,12 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+
+    <!-- NotFoundPage -->
+    <div class="u-text--center">
+      <h1>@model.translate('NOT_FOUND.TITLE')</h1>
+      <h2>@model.translate('NOT_FOUND.SUBTITLE')</h2>
+    </div>
+    <!-- NotFoundPage -->
+
+  })
+})

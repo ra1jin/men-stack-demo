@@ -1,0 +1,141 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    //
+    // flash vars
+    //
+    @if(model.flash && model.flash.data) {
+      var data = model.flash.data;
+    }
+    @if(model.flash && model.flash.dataErrors) {
+      var dataErrors = model.flash.dataErrors;
+    }
+    @if(model.flash && model.flash.alert) {
+      var alert = model.flash.alert;
+    }
+  
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('EVENT_LIST.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- EventsPage -->
+    <div class="EventsPage">
+      @if(alert) {
+        <div class="Alert Alert--closable Alert--@(alert.type)">
+          <a href="#" class="Close Alert-Close" title="close" onclick="this.parentElement.style.display='none'">×</a>
+          <span>@alert.message</span>
+        </div>
+      }
+      <div class="SelectionInline u-margin--bottom">
+        <div class="SelectionInline-title">@model.translate('EVENT_LIST.DISPLAY_SELECTION_TITLE') : </div>
+        <ul class="SelectionInline-list">
+          <li class="SelectionInline-list-item @(model._url == '/event-list' ? 'active' : '')">
+            <a href="/event-list">@model.translate('EVENT_LIST.DISPLAY_SELECTION_ITEM_ALL')</a>
+          </li>
+          <li class="SelectionInline-list-item @(model._url == '/event-list?states=on-coming|on-going' ? 'active' : '')">
+            <a href="/event-list?states=on-coming|on-going">@model.translate('EVENT_LIST.DISPLAY_SELECTION_ITEM_ONCOMING_ONGOING')</a>
+          </li>
+          <li class="SelectionInline-list-item @(model._url == '/event-list?states=ended' ? 'active' : '')">
+            <a href="/event-list?states=ended">@model.translate('EVENT_LIST.DISPLAY_SELECTION_ITEM_ENDED')</a>
+          </li>
+        </ul>
+      </div>
+      @model.events.forEach(function(event) {
+        var state = event.getState();
+        var freezed = event.isFreezed();
+        var timeRemaining = event.getTimeRemaining();
+        <div class="EventCard @(freezed ? 'EventCard--freeze' : '')">
+          <h4 class="EventCard-title">@event.title</h4>
+          <div class="EventCard-infos">
+            <div class="EventCard-infos-item">
+              <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.START_DATETIME_LABEL') : </div>
+              <div class="EventCard-infos-item-value">@event.startDatetime.locale('fr').format('LLLL')</div>
+            </div>
+            <div class="EventCard-infos-item">
+              <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.END_DATETIME_LABEL') : </div>
+              <div class="EventCard-infos-item-value">@event.endDatetime.locale('fr').format('LLLL')</div>
+            </div>
+            <div class="EventCard-infos-item">
+              <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.TIME_REMAINING_LABEL') : </div>
+              <div class="EventCard-infos-item-value u-text--important">
+                @if (state == 'ON_COMING' && timeRemaining.days > 0) {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_DAYS', [timeRemaining.days])
+                }
+                else if (state == 'ON_COMING' && timeRemaining.hours > 0) {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_HOURS_MINUTES', [timeRemaining.hours, timeRemaining.minutes])
+                }
+                else if (state == 'ON_COMING' && timeRemaining.minutes > 0) {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_MINUTES_SECONDS', [timeRemaining.minutes, timeRemaining.seconds])
+                }
+                else if (state == 'ON_COMING' && timeRemaining.seconds > 0) {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_SECONDS', [timeRemaining.seconds])
+                }
+                else if (state == 'ON_GOING') {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_ONGOING')
+                }
+                else {
+                  @model.translate('EVENT_LIST.TIME_REMAINING_VALUE_ENDED')
+                }
+              </div>
+            </div>
+            @if(event.location) {
+              <div class="EventCard-infos-item">
+                <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.LOCATION_LABEL') : </div>
+                <div class="EventCard-infos-item-value"><a href="@event.location" rel="external">@model.translate('EVENT_LIST.LOCATION_MAP_LINK')</a></div>
+              </div>
+            }
+            <div class="EventCard-infos-item">
+              <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.AUTHOR_LABEL') : </div>
+              <div class="EventCard-infos-item-value"><a href="/profile/@event.author.username">@event.author.username</a></div>
+            </div>
+            <div class="EventCard-infos-item">
+              <div class="EventCard-infos-item-label">@model.translate('EVENT_LIST.CONTRIBUTORS_LABEL') : </div>
+              <div class="EventCard-infos-item-value">
+                @event.contributors.forEach(function(contributor) {
+                  <a href="/profile/@contributor.username">@contributor.username</a>
+                })
+              </div>
+            </div>
+          </div>
+          <div class="EventCard-separator"></div>
+          <pre class="EventCard-description">@event.description</pre>
+          @if(model._user && !freezed) {
+            <div class="EventCard-actions">
+              @if(event.isOwner(model._user)) {
+                <form action="/event-edit" method="GET">
+                  <input name="idEvent" type="hidden" value="@event._id">
+                  <button class="Button" type="submit">@model.translate('EVENT_LIST.EDIT_BUTTON')</button>
+                </form>
+                <form action="/event-list/delete" method="POST">
+                  <input name="idEvent" type="hidden" value="@event._id">
+                  <button class="Button Button--primary" type="submit">@model.translate('EVENT_LIST.DELETE_BUTTON')</button>
+                </form>
+              }
+              else if(event.isSubscriber(model._user)) {
+                <form action="/event-list/unsubscribe" method="POST">
+                  <input name="idEvent" type="hidden" value="@event._id">
+                  <button class="Button Button--primary" type="submit">@model.translate('EVENT_LIST.UNSUBSCRIBE_BUTTON')</button>
+                </form>
+              }
+              else {
+                <form action="/event-list/subscribe" method="POST">
+                  <input name="idEvent" type="hidden" value="@event._id">
+                  <button class="Button" type="submit">@model.translate('EVENT_LIST.SUBSCRIBE_BUTTON')</button>
+                </form>
+              }
+            </div>
+          }
+        </div>
+      })
+    </div>
+    <!-- EventsPage -->
+
+    <!-- EmptyBox -->
+    @if(model.events.length == 0) {
+      <div class="EmptyBox">@model.translate('EVENT_LIST.EMPTY_BOX_TEXT')</div>
+    }
+    <!-- EmptyBox -->
+    
+  })
+})

@@ -1,0 +1,199 @@
+{
+    "ERROR_INVALID_DATA_FORMAT": "Format des données invalide",
+    "ERROR_INVALID_USERNAME_FORMAT": "Invalid username format",
+    "ERROR_INVALID_EMAIL_FORMAT": "Invalid email format",
+    "ERROR_INVALID_PASSWORD_FORMAT": "Invalid password format",
+    "ERROR_INVALID_BIRTHYEAR_FORMAT": "Invalid birthyear format",
+    "ERROR_INVALID_CLASS_FORMAT": "Invalid class format",
+    "ERROR_INVALID_EVENT_TITLE": "Invalid event title",
+    "ERROR_INVALID_EVENT_START_DATETIME": "Invalid event start datetime",
+    "ERROR_INVALID_EVENT_END_DATETIME": "Invalid event end datetime",
+    "ERROR_INVALID_EVENT_LOCATION": "Invalid event location",
+    "ERROR_INVALID_EVENT_DESCRIPTION": "Invalid event description",
+    "ERROR_ACCOUNT_NOT_EXIST": "Account not exist",
+    "ERROR_ACCOUNT_ALREADY_EXIST": "Account already exist",
+    "ERROR_EMAIL_ALREADY_EXIST": "Email already exist",
+    "ERROR_USERNAME_ALREADY_EXIST": "Username already exist",
+    "ERROR_PASSWORD_NOT_MATCH": "Password not match",
+    "ERROR_BAD_PASSWORD": "Bad password",
+    "ERROR_RESET_PASSWORD_INVALID_TOKEN_FORMAT": "Invalid reset password token format",
+    "ERROR_RESET_PASSWORD_INVALID_TOKEN": "Invalid reset password token",
+    "ERROR_RESET_PASSWORD_EXPIRED_TOKEN": "Reset password token expired",
+    "ERROR_EMAIL_OR_PASSWORD": "Identifiant ou mot de passe erroné",
+    "ERROR_EVENT_NOT_EXIST": "Cet evènement n'existe pas",
+    "ERROR_EVENT_ALREADY_JOINED": "Vous avez déjà rejoint cet evènement",
+    "ERROR_EVENT_NOT_ALREADY_JOINED": "Vous n'avez pas encore rejoint cet evènement",
+    "ERROR_EVENT_OWNER_CANNOT_LEAVE": "Vous ne pouvez pas vous désinscrire de l'evènement que vous avez créer",
+    "ERROR_EVENT_FREEZE": "Evènement gelée, les inscriptions/désinscription sont bloquées",
+    "ERROR_INVALID_OBJECTID_FORMAT": "Invalid objectid format",
+
+    "ENUM_CLASS_DEVELOPPER": "Developpeur",
+    "ENUM_CLASS_DESIGNER": "Designer",
+    "ENUM_CLASS_MUSICIAN": "Musician",
+    "ENUM_CLASS_WRITER": "Writer",
+    "ENUM_CLASS_TESTER": "Testeur",
+
+    "TOP_BANNER": {
+        "WELCOME": "Welcome",
+        "SIGNIN_LINK": "Signin",
+        "SIGNUP_LINK": "Signup",
+        "CREATE_EVENT": "Create event",
+        "SETTINGS": "Settings",
+        "LOGOUT": "Logout"
+    },
+    "BANNER": {
+        "HOME_LINK": "Home",
+        "MEMBERS_LINK": "Members",
+        "EVENT_LIST_LINK": "Events",
+        "ABOUTUS_LINK": "About us"
+    },
+    "HOME": {
+        "CALLOUT": "Good start to begin a new project",
+        "INTRO1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "INTRO2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "INTRO3": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem",
+        "SUBSCRIBE_BUTTON": "Start adventure"
+    },
+    "ABOUTUS": {
+        "TITLE": "Contactez-nous",
+        "FOUNDER": "Founder",
+        "LOCATION": "Localisation"
+    },
+    "ERROR_VIEW": {
+        "TITLE": "Something wrong !",
+        "SUBTITLE": "Une erreur inattendue est survenue",
+        "CODE": "Code d'erreur",
+        "MESSAGE": "Message d'erreur"
+    },
+    "EVENT_LIST": {
+        "TITLE": "Events",
+        "DISPLAY_SELECTION_TITLE": "Display",
+        "DISPLAY_SELECTION_ITEM_ALL": "All",
+        "DISPLAY_SELECTION_ITEM_ONCOMING_ONGOING": "On-coming / on-going",
+        "DISPLAY_SELECTION_ITEM_ENDED": "Ended",
+        "START_DATETIME_LABEL": "Commence le",
+        "END_DATETIME_LABEL": "Finit le",
+        "TIME_REMAINING_LABEL": "Temps restant",
+        "TIME_REMAINING_VALUE_DAYS": "%s jour(s)",
+        "TIME_REMAINING_VALUE_HOURS_MINUTES": "%s heure(s), %s minute(s)",
+        "TIME_REMAINING_VALUE_MINUTES_SECONDS": "%s minute(s), %s seconde(s)",
+        "TIME_REMAINING_VALUE_SECONDS": "%s seconde(s)",
+        "TIME_REMAINING_VALUE_ONGOING": "en cours",
+        "TIME_REMAINING_VALUE_ENDED": "Terminé",
+        "LOCATION_LABEL": "Lieu du rasemblement",
+        "LOCATION_MAP_LINK": "Voir sur la carte",
+        "AUTHOR_LABEL": "Membre organisateur",
+        "CONTRIBUTORS_LABEL": "Participants",
+        "SUBSCRIBE_BUTTON": "Rejoindre cet evènement",
+        "UNSUBSCRIBE_BUTTON": "Quitter cet evènement",
+        "EDIT_BUTTON": "Modifier mon evènement",
+        "DELETE_BUTTON": "Supprimer mon evènement",
+        "EMPTY_BOX_TEXT": "Events list is empty",
+        "EVENT_SUBSCRIBED_ALERT": "Vous avez rejoins cet evènement",
+        "EVENT_UNSUBSCRIBED_ALERT": "Vous avez quitter cet evènement",
+        "EVENT_REMOVED_ALERT": "Vous avez supprimer cet evènement"
+    },
+    "EVENT_NEW": {
+        "TITLE": "Create a new event",
+        "TITLE_FIELD": "Titre",
+        "START_DATETIME_FIELD": "Date de début",
+        "END_DATETIME_FIELD": "Date de fin",
+        "LOCATION_FIELD": "Localisation",
+        "DESCRIPTION_FIELD": "Description",
+        "CREATE_BUTTON": "Create",
+        "SUCCESS_ALERT": "Event created"
+    },
+    "EVENT_EDIT": {
+        "TITLE": "Edit an event",
+        "TITLE_FIELD": "Titre",
+        "START_DATETIME_FIELD": "Date de début",
+        "END_DATETIME_FIELD": "Date de fin",
+        "LOCATION_FIELD": "Localisation",
+        "DESCRIPTION_FIELD": "Description",
+        "EDIT_BUTTON": "Edit event",
+        "SUCCESS_ALERT": "Event edited"
+    },
+    "FORBIDDEN": {
+        "TITLE": "Forbidden access",
+        "SUBTITLE": "Try another url !"
+    },
+    "FORGOT_PASSWORD": {
+        "TITLE": "Forgot password ?",
+        "FORM_TITLE": "Received a reset code",
+        "EMAIL_FIELD": "E-Mail",
+        "SEND_REQUEST_BUTTON": "Envoyer le code de sécurité",
+        "SUCCESS_ALERT": "Code de securité envoyé par mail"
+    },
+    "MEMBERS": {
+        "TITLE": "Members",
+        "EMPTY_BOX_TEXT": "Members list is empty",
+        "BIRTHYEAR_LABEL": "Année de naissance",
+        "CLASS_LABEL": "Classe",
+        "REGISTRATION_DATE_LABEL": "Registration date",
+        "STATUS_LABEL": "Status"
+    },
+    "MEMBER_PROFILE": {
+        "TITLE": "Profil de",
+        "BIO_LABEL": "Bio",
+        "CLASS_LABEL": "Classe",
+        "SKILLS_LABEL": "Compétences",
+        "REGISTRATION_DATE_LABEL": "Date d'inscription"
+    },
+    "MEMBER_SETTINGS": {
+        "TITLE": "Paramètres",
+        "PROFILE_SECTION": "Mon profil",
+        "USERNAME_LABEL": "Username",
+        "EMAIL_LABEL": "Email",
+        "BIO_LABEL": "Bio",
+        "CLASS_LABEL": "Classe",
+        "CLASS_VALUE_NONE": "Aucune classe définit",
+        "SKILLS_LABEL": "Compétences",
+        "BIRTHYEAR_LABEL": "Année de naissance",
+        "CHANGE_PROFILE_BUTTON": "Modifier mon profil",
+        "PROFIL_CHANGED_ALERT": "Votre profil a été mis à jour",
+        "CHPASSWD_SECTION": "Changer de mot de passe",
+        "PASSWORD_LABEL": "Mot de passe actuel",
+        "NEW_PASSWORD_LABEL": "Nouveau mot de passe",
+        "NEW_PASSWORD_CONFIRM_LABEL": "Confirmation du nouveau mot de passe",
+        "CHANGE_PASSWORD_BUTTON": "Changer mon mot de passe",
+        "PASSWORD_CHANGED_ALERT": "Votre mot de passe a été changé",
+        "AVATAR_CHANGED_ALERT": "Votre avatar a été changé"
+    },
+    "NOT_FOUND": {
+        "TITLE": "Page not found",
+        "SUBTITLE": "La page que vous recherchez semble introuvable"
+    },
+    "RESET_PASSWORD": {
+        "TITLE": "Reset your password",
+        "FORM_TITLE": "Choose a new password",
+        "TOKEN_FIELD": "Reset password token",
+        "NEW_PASSWORD_FIELD": "New password",
+        "NEW_PASSWORD_CONFIRM_FIELD": "Confirm new password",
+        "RESET_BUTTON": "Reset password",
+        "SUCCESS_ALERT": "Password reset success"
+    },
+    "SIGNIN": {
+        "TITLE": "Connectez-vous",
+        "FORM_TITLE": "Connectez-vous à l'espace membre",
+        "EMAIL_FIELD": "Email",
+        "PASSWORD_FIELD": "Password",
+        "FORGOT_PASSWORD_LINK": "Forgot password ?",
+        "SUBSCRIBE_LINK": "Subscribe",
+        "SIGNIN_BUTTON": "Se connecter"
+    },
+    "SIGNUP": {
+        "TITLE": "Inscrivez-vous",
+        "FORM_TITLE": "Inscrivez-vous et devenez un membre de l'association",
+        "USERNAME_FIELD": "Username",
+        "USERNAME_FIELD_HINT": "Doit contenir uniquement des lettres, des chiffres, '_' et '-'",
+        "EMAIL_FIELD": "Email",
+        "PASSWORD_FIELD": "Password",
+        "PASSWORD_CONFIRM_FIELD": "Password confirm",
+        "BIRTHYEAR_FIELD": "Année de naissance",
+        "SIGNUP_BUTTON": "S'inscrire",
+        "SUCCESS_ALERT": "Votre inscription est enregistrée, veuillez attendre la confirmation de l'administrateur"
+    },
+    "FOOTER": {
+        "COPYRIGHT": "This site Copyright © 2018-2019 GL19."
+    }
+}

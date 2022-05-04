@@ -1,0 +1,18 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+
+    <!-- ErrorPage -->
+    <div class="u-text--center">
+      <h1>@model.translate('ERROR_VIEW.TITLE')</h1>
+      <h2>@model.translate('ERROR_VIEW.SUBTITLE')</h2>
+      @if(model.error.message) {
+        <h6>@model.translate('ERROR_VIEW.MESSAGE') : @model.error.message</h6>
+      }
+      @if(model.error.code) {
+        <h6>@model.translate('ERROR_VIEW.CODE') : @model.error.code</h6>
+      }
+    </div>
+    <!-- ErrorPage -->
+
+  })
+})

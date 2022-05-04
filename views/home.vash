@@ -1,0 +1,26 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    <!-- Homepage -->
+    <div class="HomePage">
+      <div class="HomePage-intro u-margin--bottom">
+        <p class="HomePage-callout">
+          @model.translate('HOME.CALLOUT')
+        </p>
+        <p>
+          @html.raw(model.translate('HOME.INTRO1'))
+        </p>
+        <p>
+          @html.raw(model.translate('HOME.INTRO2'))
+        </p>
+        <p>
+          <a class="Button" href="/signup">@model.translate('HOME.SUBSCRIBE_BUTTON')</a>
+        </p>
+      </div>
+      <hr class="Rule Rule--secondary">
+      <p>
+        @html.raw(model.translate('HOME.INTRO3'))
+      </p>
+    </div>
+    <!-- Homepage -->
+  })
+})

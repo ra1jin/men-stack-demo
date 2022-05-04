@@ -1,0 +1,12 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+
+    <!-- ForbiddenPage -->
+    <div class="u-text--center">
+      <h1>@model.translate('FORBIDDEN.TITLE')</h1>
+      <h2>@model.translate('FORBIDDEN.SUBTITLE')</h2>
+    </div>
+    <!-- ForbiddenPage -->
+
+  })
+})

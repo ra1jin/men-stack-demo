@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>@model.title</title>
+  <meta name="description" content="Template boilerplate">
+  <meta name="copyright" content="This document copyright">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/core.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  @html.block('added_styles')
+  @html.block('added_scripts')
+</head>
+
+<body class="@model._currentTheme">
+  <div class="Container-fixed">
+    <div class="PageWrapper">
+      <!-- SystemBanner -->
+      <div class="SystemBanner">
+        <div class="SystemBanner-langs">
+          <a href="/chlang?language=fr&redirectUrl=@model._url"><img src="/images/system-lang-fr.png" /></a>
+          <a href="/chlang?language=en&redirectUrl=@model._url"><img src="/images/system-lang-en.png" /></a>
+        </div>
+        <!-- 
+        <div class="SystemBanner-themes">
+          <a href="/chtheme?theme=theme-default&redirectUrl=@model._url"><img src="/images/system-theme-default.png" /></a>
+          <a href="/chtheme?theme=theme-green&redirectUrl=@model._url"><img src="/images/system-theme-green.png" /></a>
+          <a href="/chtheme?theme=theme-red&redirectUrl=@model._url"><img src="/images/system-theme-red.png" /></a>
+        </div>
+        -->
+      </div>
+      <!-- SystemBanner -->
+      <!-- TopBanner -->
+      <div class="TopBanner u-layer-1">
+        @if(model._user) {
+          <img class="TopBanner-profileImg" src="@(model._user.avatar == '' ? model._defaultAvatar : model._user.avatar)">
+          <span class="TopBanner-welcomeMessage">@model.translate('TOP_BANNER.WELCOME')
+            <a class="TopBanner-welcomeMessage-userlink" href="/profile/@model._user.username">@model._user.username</a> !
+          </span>
+          <div class="TopBanner-nav">
+            <div class="TopBanner-nav-item @(model._url.startsWith('/event-new') ? 'active' : '')">
+              <a href="/event-new">@model.translate('TOP_BANNER.CREATE_EVENT')</a>
+            </div>
+            <div class="TopBanner-nav-item @(model._url.startsWith('/settings') ? 'active' : '')">
+              <a href="/settings">@model.translate('TOP_BANNER.SETTINGS')</a>
+            </div>
+            <div class="TopBanner-nav-item">
+              <a href="/logout">@model.translate('TOP_BANNER.LOGOUT')</a>
+            </div>
+          </div>
+        }
+        else {
+          <div class="TopBanner-nav">
+            <div class="TopBanner-nav-item @(model._url.startsWith('/signin') ? 'active' : '')">
+              <a href="/signin">@model.translate('TOP_BANNER.SIGNIN_LINK')</a>
+            </div>
+            <div class="TopBanner-nav-item @(model._url.startsWith('/signup') ? 'active' : '')">
+              <a href="/signup">@model.translate('TOP_BANNER.SIGNUP_LINK')</a>
+            </div>
+          </div>
+        }
+      </div>
+      <!-- TopBanner -->
+
+      <!-- Banner -->
+      <div class="Banner u-layer-1">
+        <div class="Banner-bg"></div>
+        <div class="Banner-nav">
+          <div class="Banner-nav-item @(model._url == '/' ? 'active' : '')">
+            <a href="/">@model.translate('BANNER.HOME_LINK')</a>
+          </div>
+          <div class="Banner-nav-item @(model._url.startsWith('/members') ? 'active' : '')">
+            <a href="/members">@model.translate('BANNER.MEMBERS_LINK')</a>
+          </div>
+          <div class="Banner-nav-item @(model._url.startsWith('/event-list') ? 'active' : '')">
+            <a href="/event-list">@model.translate('BANNER.EVENT_LIST_LINK')</a>
+          </div>
+          <div class="Banner-nav-item @(model._url.startsWith('/aboutus') ? 'active' : '')">
+            <a href="/aboutus">@model.translate('BANNER.ABOUTUS_LINK')</a>
+          </div>
+        </div>
+      </div>
+      <!-- Banner -->
+
+      <!-- PageContent -->
+      <div class="PageContent">
+        @html.block('content')
+      </div>
+      <!-- PageContent -->
+
+      <!-- Footer -->
+      <div class="Footer">
+        <div class="Footer-copyright">
+          <em>@model.translate('FOOTER.COPYRIGHT')</em><br>
+        </div>
+      </div>
+      <!-- Footer -->
+
+    </div>
+  </div>
+</body>
+</html>

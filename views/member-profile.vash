@@ -1,0 +1,57 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+        <li class="Breadcrumb-item"><a href="#">@model.translate('MEMBER_PROFILE.TITLE') @model.user.username</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- UserProfilePage -->
+    <div class="UserProfilePage">
+      <div class="u-fx">
+        <div class="u-fx-flex-1">
+          <div class="UserProfileImgBox">
+            <img class="UserProfileImgBox-img" src="@(model.user.avatar == '' ? model._defaultAvatar : model.user.avatar)">
+          </div>
+        </div>
+        <div class="u-fx-flex-3 u-margin--left">
+          <div class="DataView">
+            <div class="DataView-item">
+              <div class="DataView-item-key">@model.translate('MEMBER_PROFILE.BIO_LABEL') : </div>
+              @if(model.user.bio) {
+                <div class="DataView-item-value">@model.user.bio</div>
+              }
+              else {
+                <div class="DataView-item-value">N/A</div>
+              }
+            </div>
+            <div class="DataView-item">
+              <div class="DataView-item-key">@model.translate('MEMBER_PROFILE.CLASS_LABEL') : </div>
+              @if(model.user.class) {
+                <div class="DataView-item-value">@model.translate('ENUM_CLASS_' + model.user.class.toUpperCase())</div>
+              }
+              else {
+                <div class="DataView-item-value">N/A</div>
+              }
+            </div>
+            <div class="DataView-item">
+              <div class="DataView-item-key">@model.translate('MEMBER_PROFILE.SKILLS_LABEL') : </div>
+              @if(model.user.skills) {
+                <div class="DataView-item-value">@model.user.skills</div>
+              }
+              else {
+                <div class="DataView-item-value">N/A</div>
+              }
+            </div>
+            <div class="DataView-item">
+              <div class="DataView-item-key">@model.translate('MEMBER_PROFILE.REGISTRATION_DATE_LABEL') : </div>
+              <div class="DataView-item-value">@model.user.created.format('DD/MM/YYYY')</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UserProfilePage -->
+    
+  })
+})

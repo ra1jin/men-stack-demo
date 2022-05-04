@@ -1,0 +1,77 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+    //
+    // flash vars
+    //
+    @if(model.flash && model.flash.data) {
+      var data = model.flash.data;
+    }
+    @if(model.flash && model.flash.dataErrors) {
+      var dataErrors = model.flash.dataErrors;
+    }
+    @if(model.flash && model.flash.alert) {
+      var alert = model.flash.alert;
+    }
+  
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('SIGNUP.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- SignupPage -->
+    <div class="SignupPage">
+      <div class="AuthModule u-layer-2 u-margin--auto">
+        <h5 class="AuthModule-title">@model.translate('SIGNUP.FORM_TITLE')</h5>
+        <div class="AuthModule-separator"></div>
+        @if(alert) {
+          <div class="Alert Alert--@(alert.type)">
+            <span>@alert.message</span>
+          </div>
+        }
+        <form class="Form" action="/signup" method="POST">
+          <div class="FormField FormField--required">
+            <label class="FormField-label">@model.translate('SIGNUP.USERNAME_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="username" value="@(data && data.username || '' )" required>
+            <div class="FormField-hint">@model.translate('SIGNUP.USERNAME_FIELD_HINT')</div>
+            @if(dataErrors && dataErrors.username) {
+              <div class="FormField-error">@dataErrors.username.message</div>
+            }
+          </div>
+          <div class="FormField FormField--required">
+            <label class="FormField-label">@model.translate('SIGNUP.EMAIL_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="email" type="email" value="@(data && data.email || '' )" required>
+            @if(dataErrors && dataErrors.email) {
+              <div class="FormField-error">@dataErrors.email.message</div>
+            }
+          </div>
+          <div class="FormField FormField--required">
+            <label class="FormField-label">@model.translate('SIGNUP.PASSWORD_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="password" type="password" required>
+            @if(dataErrors && dataErrors.password) {
+              <div class="FormField-error">@dataErrors.password.message</div>
+            }
+          </div>
+          <div class="FormField FormField--required">
+            <label class="FormField-label">@model.translate('SIGNUP.PASSWORD_CONFIRM_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="passwordConfirm" type="password" required>
+            @if(dataErrors && dataErrors.passwordConfirm) {
+              <div class="FormField-error">@dataErrors.passwordConfirm.message</div>
+            }
+          </div>
+          <div class="FormField FormField--required">
+            <label class="FormField-label">@model.translate('SIGNUP.BIRTHYEAR_FIELD') : </label>
+            <input class="FormCtrl FormCtrl--block" name="birthYear" type="number" value="@(data && data.birthYear || '' )" required>
+            @if(dataErrors && dataErrors.birthYear) {
+              <div class="FormField-error">@dataErrors.birthYear.message</div>
+            }
+          </div>
+          <div class="u-text--center">
+            <button class="Button Button--block" type="submit">@model.translate('SIGNUP.SIGNUP_BUTTON')</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- SignupPage -->
+  })
+})

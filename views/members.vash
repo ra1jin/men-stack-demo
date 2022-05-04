@@ -1,0 +1,55 @@
+@html.extend('layout', function(model) {
+  @html.block('content', function(model) {
+
+    <!-- Breadcrumb -->
+    <ol class="Breadcrumb">
+      <li class="Breadcrumb-item"><a href="#">@model.translate('MEMBERS.TITLE')</a></li>
+    </ol>
+    <!-- Breadcrumb -->
+
+    <!-- MembersPage -->
+    <div class="MembersPage">
+      <div class="Row Row--gutter">
+        @model.users.forEach(function(user) {
+          <div class="Row-col u-width--1of3">
+            <div class="MemberCard">
+              <a href="/profile/@user.username">
+                <h2 class="MemberCard-name">@user.username</h2>
+                <div class="MemberCard-avatar">
+                  <img src="@(user.avatar == '' ? model._defaultAvatar : user.avatar)">
+                </div>
+              </a>
+              <div class="MemberCard-info">
+                <div class="MemberCard-info-item">
+                  <span class="MemberCard-info-item-title">@model.translate('MEMBERS.CLASS_LABEL') :</span>
+                  @if(user.class) {
+                    <span class="MemberCard-info-item-value">@model.translate('ENUM_CLASS_' + user.class.toUpperCase())</span>
+                  }
+                  else {
+                    <span class="MemberCard-info-item-value">N/A</span>
+                  }
+                </div>
+                <div class="MemberCard-info-item">
+                  <span class="MemberCard-info-item-title">@model.translate('MEMBERS.BIRTHYEAR_LABEL') :</span>
+                  <span class="MemberCard-info-item-value">@user.birthYear</span>
+                </div>
+                <div class="MemberCard-info-item">
+                  <span class="MemberCard-info-item-title">@model.translate('MEMBERS.REGISTRATION_DATE_LABEL') :</span>
+                  <span class="MemberCard-info-item-value">@user.created.format('DD/MM/YYYY')</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        })
+      </div>
+    </div>
+    <!-- MembersPage -->
+
+    <!-- EmptyBox -->
+    @if(model.users.length == 0) {
+      <div class="EmptyBox">@model.translate('MEMBERS.EMPTY_BOX_TEXT')</div>
+    }
+    <!-- EmptyBox -->
+    
+  })
+})
